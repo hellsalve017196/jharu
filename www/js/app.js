@@ -23,31 +23,65 @@ app.run(function($ionicPlatform) {
 });
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider.state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html'
-  });
-
-      $stateProvider.state('app.checkin', {
+  $stateProvider.state('checkin', {
     url: '/checkin',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/checkin.html',
-        controller:'checkCtrl'
-      }
-    }
+    templateUrl: 'templates/checkin.html',
+    controller:'checkCtrl'
   });
 
-      $stateProvider.state('app.help',{
-        url:'/help',
-        views: {
-          'menuContent':{
-            templateUrl: 'templates/help.html'
-          }
-        }
-      });
+  $stateProvider.state('help',{
+    url:'/help',
+    templateUrl: 'templates/help.html'
+  });
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/checkin');
+  $stateProvider.state('success',{
+    url:'/success',
+    templateUrl: 'templates/success.html'
+  });
+
+  if(localStorage.getItem("first") == undefined)
+  {
+    localStorage.setItem("first",'1');
+    $urlRouterProvider.otherwise('/help');
+  }
+  else{
+    $urlRouterProvider.otherwise('/checkin');
+  }
+
+  /*$stateProvider.state('app', {
+   url: '/app',
+   abstract: true,
+   templateUrl: 'templates/menu.html'
+   });*/
+
+  /* $stateProvider.state('app.checkin', {
+   url: '/checkin',
+   views: {
+   'menuContent': {
+   templateUrl: 'templates/checkin.html',
+   controller:'checkCtrl'
+   }
+   }
+   });
+
+   $stateProvider.state('app.help',{
+   url:'/help',
+   views: {
+   'menuContent':{
+   templateUrl: 'templates/help.html'
+   }
+   }
+   });
+
+   $stateProvider.state('app.success',{
+   url:'/success',
+   views:{
+   'menuContent':{
+   templateUrl:'templates/success.html'
+   }
+   }
+   });
+
+   */
+
 });

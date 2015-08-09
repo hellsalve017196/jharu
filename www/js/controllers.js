@@ -1,10 +1,15 @@
-app.controller('checkCtrl',function($scope,$cordovaGeolocation,synchronousService) {
+app.controller('checkCtrl',function($scope,$cordovaGeolocation,synchronousService,$state) {
+            $scope.imageSrc = 'file:///android_asset/www/img/tap.png';
+
             $scope.zn = function() {
+
+                $scope.imageSrc = 'file:///android_asset/www/img/req.png';
 
                 var posOptions = {timeout: 10000, enableHighAccuracy: false};
 
                 $cordovaGeolocation.getCurrentPosition(posOptions)
                     .then(function (position) {
+
                         var lat  = position.coords.latitude.toFixed(6);
                         var long = position.coords.longitude.toFixed(6);
 
@@ -14,7 +19,7 @@ app.controller('checkCtrl',function($scope,$cordovaGeolocation,synchronousServic
 
                         if(data.flag == 1)
                         {
-                            alert("Coordinates Successfully send");
+                            $state.go('success');
                         }
                         else
                         {
