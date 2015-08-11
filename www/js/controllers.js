@@ -28,7 +28,12 @@ app.controller('checkCtrl',function($scope,$cordovaGeolocation,synchronousServic
 
                         console.log(data);
                     }, function(err) {
-                        alert("error occured");
+                        if(err.code == 2)
+                        {
+                            alert("check your internet setting or datetime setting");
+                        }
+
+                        $scope.imageSrc = 'file:///android_asset/www/img/tap.png';
                     });
 
             }
