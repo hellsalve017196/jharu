@@ -31,7 +31,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('help',{
     url:'/help',
-    templateUrl: 'templates/help.html'
+    templateUrl: 'templates/help.html',
+      controller:'helpCtrl'
   });
 
   $stateProvider.state('success',{
