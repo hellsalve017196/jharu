@@ -1,17 +1,55 @@
 <ion-view cache-view="false" view-title="Check In">
-  <ion-header-bar align-title="left" class="bar-balanced">
+  <!--<ion-header-bar align-title="left" class="bar-balanced">
     <h1 class="title">Check In</h1>
-  </ion-header-bar>
+  </ion-header-bar>-->
 
   <ion-content class="center" scroll="false">
-
-    <div class="row">
-      <div class="col">
-        <div ng-click="zn()" class="center">
-          <img ng-bind-html="res" src="{{ imageSrc }}" width="150" height="150"/>
+    <div>
+      <div class="row">
+        <div class="col col-50 col-offset-25">
+          <div class="center">
+            <img src="file:///android_asset/www/img/welcome.png" height="25" width="150">
+          </div>
         </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col col-50 col-offset-25">
+          <div ng-click="zn()" class="center">
+            <img ng-bind-html="res" src="{{ imageSrc }}" style="width:100%" class="ng-binding">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col"><div class="center" ng-click="tuto()"><img src="file:///android_asset/www/img/help.png" width="70" height="70"></div></div>
+        <div class="col"><div class="center">&nbsp;</div></div>
+        <div class="col"><div class="center" ng-click="maps()"><img src="file:///android_asset/www/img/places.png" width="70" height="70"></div></div>
       </div>
     </div>
 
+    <!--<div>
+      <div class="row">
+        <div class="col col-50 col-offset-10">
+          <div class="center">
+            <img src="file:///android_asset/www/img/welcome.png" height="25" width="150"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-50 col-offset-10">
+          <div ng-click="zn()" class="center">
+            <img ng-bind-html="res" src="{{ imageSrc }}" width="150" height="150"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col"><div class="center" ng-click="tuto()"><img src="file:///android_asset/www/img/help.png" width="70" height="70"/></div></div>
+        <div class="col"><div class="center">&nbsp;</div></div>
+        <div class="col"><div class="center" ng-click="maps()"><img src="file:///android_asset/www/img/places.png" width="70" height="70"/></div></div>
+      </div>
+    </div>-->
   </ion-content>
 </ion-view>

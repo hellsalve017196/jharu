@@ -1,0 +1,16 @@
+<ion-view cache-view="true">
+    <ion-header-bar align-title="center" class="bar-balanced">
+        <a ui-sref="checkin" class="button button-dark icon ion-android-arrow-back"></a>
+        <h1 class="title">Trash Map</h1>
+    </ion-header-bar>
+
+    <!-- disabling page scrolling -->
+    <ion-content data-tap-disabled="true">
+        <!-- maps div -->
+        <div id="map">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                <ui-gmap-marker ng-repeat="m in map.markersr" coords="m" icon="m.icon" idkey="m.id"></ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+    </ion-content>
+</ion-view>

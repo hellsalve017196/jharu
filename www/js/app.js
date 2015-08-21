@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ionic','ngCordova']);
+var app = angular.module('starter', ['ionic','ngCordova','uiGmapgoogle-maps']);
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -19,6 +19,9 @@ app.run(function($ionicPlatform) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+      //configuring for version 3 google map
+
   });
 });
 
@@ -37,7 +40,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('success',{
     url:'/success',
-    templateUrl: 'templates/success.html'
+    templateUrl: 'templates/success.html',
+    controller:'successCtrl'
+  });
+
+  $stateProvider.state('map',{
+      url:'/map',
+      templateUrl: 'templates/map.html',
+      controller: 'mapCtrl'
   });
 
   if(localStorage.getItem("first") == undefined)
@@ -48,6 +58,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   else{
     $urlRouterProvider.otherwise('/checkin');
   }
+
 
   /*$stateProvider.state('app', {
    url: '/app',
