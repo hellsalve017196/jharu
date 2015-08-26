@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.cleandhaka728978" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>clean_app</name>
+  <name>jharu</name>
   <description>
        iTechoid
     </description>
@@ -17,7 +17,7 @@
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
   <preference name="orientation" value="portrait"/>
-  <preference name="xwalkVersion" value="11" />
+  <preference name="xwalkVersion" value="11"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>

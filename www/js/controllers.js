@@ -23,10 +23,10 @@ app.controller('checkCtrl',function($scope,$cordovaGeolocation,$cordovaNetwork,s
 
     //check in
     $scope.zn = function() {
-        if($cordovaNetwork.isOnline())
+	$scope.imageSrc = 'file:///android_asset/www/img/req.png';      
+  	console.log("hey");
+	if($cordovaNetwork.isOnline())
         {
-            $scope.imageSrc = 'file:///android_asset/www/img/req.png';
-
             var posOptions = {timeout: 8000, enableHighAccuracy: true,maximumAge:5000};
 
             $cordovaGeolocation.getCurrentPosition(posOptions)
@@ -35,7 +35,7 @@ app.controller('checkCtrl',function($scope,$cordovaGeolocation,$cordovaNetwork,s
                     var lat  = position.coords.latitude.toFixed(6);
                     var long = position.coords.longitude.toFixed(6);
 
-                    url = 'http://agatafeedmill.com/maps/index.php/main/insert_geolocation/'+lat+'/'+long;
+                    url = 'http://jharu.itechoid.com/index.php/main/insert_geolocation/'+lat+'/'+long;
 
 
                     data = synchronousService(url);
@@ -66,8 +66,9 @@ app.controller('checkCtrl',function($scope,$cordovaGeolocation,$cordovaNetwork,s
         else
         {
             alert("Check Internet Connection and Try Again");
+	    $scope.imageSrc = 'file:///android_asset/www/img/tap.png';	
         }
-
+	
     }
 });
 
